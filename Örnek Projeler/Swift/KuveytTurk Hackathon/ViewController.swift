@@ -12,8 +12,11 @@ class ViewController: UIViewController {
     
     
     @IBOutlet weak var payButton: UIButton!
+    @IBOutlet weak var AmountText: UITextField!
+    @IBOutlet weak var NumberText: UITextField!
     
     override func viewDidLoad() {
+
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         payButton.layer.borderWidth = 2.0
@@ -79,7 +82,7 @@ class ViewController: UIViewController {
         let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/gsmprepaid")!)
         request.HTTPMethod = "POST"
         request.allHTTPHeaderFields = headers
-        let postString = "number=13&amount=100"
+        let postString = "number="+NumberText.text!+"&amount="+AmountText.text!
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
             guard error == nil && data != nil else {                                                          // check for fundamental networking error
@@ -94,6 +97,7 @@ class ViewController: UIViewController {
             
             let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)
             print("responseString = \(responseString)")
+            
             
         }
         task.resume()
