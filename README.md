@@ -8,7 +8,9 @@ En az 2, en fazla 3 kişilik takımlar. Zevkli ve keyif veren çalışma ortamı
 
 Etkinlik **4 Kasım Cuma 18:00 / 6 Kasım Pazar 17:00** arasında Kuveyt Türk Bankacılık ve Yaşam Üssünde gerçekleştirilecektir.
 
-# Kuveyt Türk Servislerini Nasıl Kullanacağım?
+## # Kuveyt Türk Bankacılık Servisleri
+
+#Nasıl Kullanacağım?
 Kullanılması zorunlu olmamakla birlikte sizler için bankamız bünyesindeki servisleri Node.js altapısı ile sunuyoruz.
 
 # Temel Bankacılık Servisleri
