@@ -1,6 +1,6 @@
-## # Kuveyt Türk Kod Fest '16
+## Kuveyt Türk Kod Fest '16
 
-# KT KodFest Nedir?
+## KT KodFest Nedir?
 Fikirlerin ve geliştirilen uygulamaların günümüzdeki iş alanlarını domine ettiği şu günlerde, tasarımcı ve geliştiricilerin belirlenen süre içerisinde fikirlerini uygulamaya dönüştürme imkanına sahip olacağı bir Kuveyt Türk etkinliğidir. 
 
 Geriye Sayım Süresi 36 Saat 
@@ -8,7 +8,7 @@ En az 2, en fazla 3 kişilik takımlar. Zevkli ve keyif veren çalışma ortamı
 
 Etkinlik **4 Kasım Cuma 18:00 / 6 Kasım Pazar 17:00** arasında Kuveyt Türk Bankacılık ve Yaşam Üssünde gerçekleştirilecektir.
 
-## # Kuveyt Türk Bankacılık Servisleri
+## Kuveyt Türk Bankacılık Servisleri
 
 #Nasıl Kullanacağım?
 Kullanılması zorunlu olmamakla birlikte sizler için bankamız bünyesindeki servisleri Node.js altapısı ile sunuyoruz.
