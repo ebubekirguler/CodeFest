@@ -12,6 +12,7 @@ Etkinlik **4 Kasım Cuma 18:00 / 6 Kasım Pazar 17:00** arasında Kuveyt Türk B
 
 ### Nasıl Kullanacağım?
 Kullanılması zorunlu olmamakla birlikte sizler için bankamız bünyesindeki servisleri Node.js altapısı ile sunuyoruz.
+Servisler ve kurulum hakkında detaylı bilgilere [Wiki](<https://github.com/KTCodeFest/CodeFest/wiki>) sayfamızdan ulaşabilirsiniz.
 
 ### Temel Bankacılık Servisleri
 * Hesap Bakiye Sorgulama
