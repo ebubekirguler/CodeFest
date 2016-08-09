@@ -4,7 +4,7 @@ var moment = require('moment');
 var logger = new (winston.Logger)({
     transports: [
         new (winston.transports.File)({
-            filename:'logs/' + moment().format('MM-DD-YYYY-HH') + '.log', 
+            filename:'logs/' + moment().format('MM-DD-YYYY-HH') + '.log',
             handleExceptions: true,
             humanReadableUnhandledException: true
         })

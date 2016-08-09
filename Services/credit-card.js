@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 router.post('/', function (req, res) {
     var r = req.body;
     var returnObject = { success: false, message: '' };
@@ -20,30 +21,37 @@ router.post('/', function (req, res) {
 })
 
 router.get('/', function (req, res) {
-    var r = req.params;
-    var cards = [
-        { name: 'Muhammed Ömer', surname: 'Kısa', identityNumber: '11111111111', mobilePhone: '4440111', mobilePhoneAreaCode: '212', email: 'omer_kisa@mail.com', cardType: 'SALEPLUS' },
-        { name: 'Ahmet Berke', surname: 'Bora', identityNumber: '26609236060', mobilePhone: '4440112', mobilePhoneAreaCode: '212', email: 'berke_bora@mail.com', cardType: 'SALEPLATIN' },
-    ];
-    res.json({
-        success: true,
-        result: cards
-    });
+    res.json({success: true, result: cards});
 })
-router.get('/:identityNumber', function (req, res) {
-    var r = req.params;
-    var cards = [
-        { name: 'Muhammed Ömer', surname: 'Kısa', identityNumber: '11111111111', mobilePhone: '4440111', mobilePhoneAreaCode: '212', email: 'omer_kisa@mail.com', cardType: 'SALEPLUS' },
-        { name: 'Ahmet Berke', surname: 'Bora', identityNumber: '26609236060', mobilePhone: '4440112', mobilePhoneAreaCode: '212', email: 'berke_bora@mail.com', cardType: 'SALEPLATIN' },
-    ];
-    if (r.identityNumber != null) {
-        cards = cards.filter(function (p) { return p.identityNumber == r.identityNumber }
-        );
+
+router.get('/:id/debt', function (req, res) {
+  if(!cards.find(x=> x.id == req.params.id)) {
+    res.json({success: false, message: 'Kart bilgisi bulunamadı.'});
+  } else {
+    var response = {};
+    response.cardNumber = cards.find(x=> x.id == req.params.id).cardNumber;
+    response.debt = cards.find(x=> x.id == req.params.id).limit - cards.find(x=> x.id == req.params.id).availableLimit;
+    res.json({success: true, result: response});
+  }
+})
+
+router.post('/payment', function (req, res) {
+    var r = req.body;
+    var returnObject = { success: false, message: '' };
+    if (r.cardNumber == null ||
+        r.amount == null) {
+        returnObject.message = 'Şuanda işleminizi gerçekleştiremiyoruz.';
     }
-    res.json({
-        success: true,
-        result: cards
-    });
+    else {
+        returnObject.message = r.cardNumber + ' numaralı karta ait ' + r.amount + ' TL\'lik borç ödemesi yapılmıştır.';
+        returnObject.success = true;
+    }
+    res.json(returnObject);
 })
+
+var cards = [
+    { id: 1, cardType: 'SALEPLUS', cardNumber: "1111222233334444", limit:10000, availableLimit:8000 },
+    { id: 2, cardType: 'SALEPLATIN', cardNumber: "5555666677778888", limit:10000, availableLimit:9000 }
+];
 
 module.exports = router;

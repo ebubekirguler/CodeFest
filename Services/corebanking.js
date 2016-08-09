@@ -1,10 +1,15 @@
 var express = require('express');
 var router = express.Router();
 
+// hesap listesi
+router.get('/accounts', function(req, res) {
+  res.json({success: true, result: accountList})
+})
 
+// qr ile para çek
 router.post('/qr', function (req, res) {
-    if(req.body.amount) {
-    	res.json({ success: true, message: req.body.amount + ' TL tutarındaki işleminize ATM üzerinden devam edebilirsiniz.'});
+    if(req.body.amount && req.body.ATMCode && atmList.find(x=> x.Code == req.body.ATMCode)) {
+    	res.json({ success: true, message: req.body.amount + ' TL tutarındaki işleminize ' + atmList.find(x=> x.Code == req.body.ATMCode).Name+ ' üzerinden devam edebilirsiniz.'});
     }
     else {
 		res.json({ success: false, message: 'Şuanda işleminizi gerçekleştiremiyoruz.'});
@@ -12,14 +17,17 @@ router.post('/qr', function (req, res) {
 
 })
 
+// döviz listesi
 router.get('/fecs', function (req, res) {
     res.json({ success: true, result: fecList});
 })
 
+// kur listesi
 router.get('/fxrates', function (req, res) {
     res.json({ success: true, result: fxRates});
 })
 
+// kur listesi (tekil)
 router.get('/fxrates/:fecId', function (req, res) {
     getFXRate(req.params.fecId, function(rate) {
         res.json({ success: true, result: rate});
@@ -28,11 +36,10 @@ router.get('/fxrates/:fecId', function (req, res) {
     })
 })
 
+// atm listesi
 router.get('/atms', function (req, res) {
     res.json({ success: true, result: atmList});
 })
-
-
 
 module.exports = router;
 
@@ -50,6 +57,22 @@ getFXRate = function(fecId, onSuccess, onError) {
     }
 };
 
+var accountList = [
+  {
+    accountNumber: 56,
+    accountSuffix: 1,
+    fec: 0,
+    balance: 100,
+    productCode: 'CARIHESAP'
+  },
+  {
+    accountNumber: 56,
+    accountSuffix: 1,
+    fec: 0,
+    balance: 1000,
+    productCode: 'AYLIKKATILMA'
+  }
+]
 var fecList = [
          {
             "FecId": "0",
@@ -277,7 +300,7 @@ var fecList = [
             "FecName": "Filipinler Pesosu"
          }
          ];
-var atmList = 
+var atmList =
     [
          {
             "Code": "KT34A001",
@@ -383,7 +406,7 @@ var atmList =
             "Longitude": "41.032258",
             "Latitude": "28.8453543",
             "Type": "XTM"
-        }         
+        }
       ]
 var fxRates =  [
          {

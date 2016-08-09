@@ -31,12 +31,19 @@ app.use('/Auth', require('./auth'));
 app.use('/MoneyTransfer', require('./money-transfer'));
 app.use('/CoreBanking', require('./corebanking'));
 app.use('/GsmPrePaid', require('./gsm-prepaid'));
-app.use('/CardPayment', require('./card-payment'));
 app.use('/BillPayment', require('./bill-payment'));
-app.use('/CheckAccountBalance', require('./check-account-balance'));
 app.use('/VirtualPos', require('./virtual-pos'));
 app.use('/Loan', require('./loan'));
 app.use('/CreditCard', require('./credit-card'));
+
+// 404 handler
+app.use(function(req, res, next) {
+	var err = {}
+	err.status = 404;
+	err.message = "EndPointNotFound"
+	err.isFriendly = true;
+	next(err);
+})
 
 // unhandled
 app.use(function(err, req, res, next) {
