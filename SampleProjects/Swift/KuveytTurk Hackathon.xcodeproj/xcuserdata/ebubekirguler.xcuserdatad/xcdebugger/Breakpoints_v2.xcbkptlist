@@ -2,4 +2,166 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423828.864345"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "HTTPPostAuthentication()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423843.268413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "HTTPPostGsmPrePaid(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423863.22967"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "82"
+            endingLineNumber = "82"
+            landmarkName = "HTTPPostGsmPrePaid(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423879.258538"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "HTTPPostGsmPrePaid(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423884.630431"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "HTTPPostGsmPrePaid(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KuveytTurk_Hackathon.ViewController.(HTTPPostGsmPrePaid (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSString&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "KuveytTurk Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubekirguler/Documents/CodeFest/O%CC%88rnek%20Projeler/Swift/KuveytTurk%20Hackathon/ViewController.swift"
+                  timestampString = "492506255.52026"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "375">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KuveytTurk_Hackathon.ViewController.(HTTPPostGsmPrePaid (Swift.ImplicitlyUnwrappedOptional&lt;__ObjC.NSString&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "KuveytTurk Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubekirguler/Documents/CodeFest/O%CC%88rnek%20Projeler/Swift/KuveytTurk%20Hackathon/ViewController.swift"
+                  timestampString = "492506255.520367"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "94"
+                  endingLineNumber = "94"
+                  offsetFromSymbolStart = "545">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "KuveytTurk Hackathon/ViewController.swift"
+            timestampString = "492423914.528238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "HTTPPostAuthentication()"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KuveytTurk_Hackathon.ViewController.(HTTPPostAuthentication () -&gt; ()).(closure #1)"
+                  moduleName = "KuveytTurk Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubekirguler/Documents/CodeFest/O%CC%88rnek%20Projeler/Swift/KuveytTurk%20Hackathon/ViewController.swift"
+                  timestampString = "492506255.521006"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "390">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "KuveytTurk_Hackathon.ViewController.(HTTPPostAuthentication () -&gt; ()).(closure #1)"
+                  moduleName = "KuveytTurk Hackathon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ebubekirguler/Documents/CodeFest/O%CC%88rnek%20Projeler/Swift/KuveytTurk%20Hackathon/ViewController.swift"
+                  timestampString = "492506255.521105"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "560">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

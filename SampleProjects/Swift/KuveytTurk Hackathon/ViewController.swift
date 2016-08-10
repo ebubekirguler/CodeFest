@@ -14,7 +14,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var payButton: UIButton!
     @IBOutlet weak var AmountText: UITextField!
     @IBOutlet weak var NumberText: UITextField!
-    
+    @IBOutlet weak var OperatorText: UITextField!
     override func viewDidLoad() {
 
         super.viewDidLoad()
@@ -38,7 +38,7 @@ class ViewController: UIViewController {
     
     func HTTPPostAuthentication() {
         
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/auth")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ktcodefest.azurewebsites.net/auth")!)
         request.HTTPMethod = "POST"
         let postString = "accountNumber=13&password=Jack"
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
@@ -79,10 +79,11 @@ class ViewController: UIViewController {
         let headers = [
             "authorization": accessToken
         ]
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://localhost:3000/gsmprepaid")!)
+        let request = NSMutableURLRequest(URL: NSURL(string: "http://ktcodefest.azurewebsites.net/gsmprepaid")!)
         request.HTTPMethod = "POST"
         request.allHTTPHeaderFields = headers
-        let postString = "number="+NumberText.text!+"&amount="+AmountText.text!
+        let postString = "phoneNumber="+NumberText.text!+"&amount="+AmountText.text!+"&operatorCode="+OperatorText.text!;
+        
         request.HTTPBody = postString.dataUsingEncoding(NSUTF8StringEncoding)
         let task = NSURLSession.sharedSession().dataTaskWithRequest(request) { data, response, error in
             guard error == nil && data != nil else {                                                          // check for fundamental networking error
