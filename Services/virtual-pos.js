@@ -112,13 +112,13 @@ router.post('/goldscoreusage', function (req, res) {
       r.cardType == null ||
       r.amount == null ||
       r.merchantId == null ||
-      r.goldscore == null ||
+      r.goldScore == null ||
       r.currencyCode == null)
     {
       returnObject.message = 'Şuanda işleminizi gerçekleştiremiyoruz.';
     }
     else {
-      returnObject.message = r.creditCardNumber + ' numaralı kredi kartına ait "provisionNumber": "67867" provizyon numaralı işlem için hesabınıza tanımlı ' + r.goldscore + ' TL değerinde altın puan kullanımı gerçekleştirilmiştir';
+      returnObject.message = r.creditCardNumber + ' numaralı kredi kartına ait "provisionNumber": "67867" provizyon numaralı işlem için hesabınıza tanımlı ' + r.goldScore + ' TL değerinde altın puan kullanımı gerçekleştirilmiştir';
       returnObject.success = true;
     }
   res.json(returnObject);
@@ -126,12 +126,12 @@ router.post('/goldscoreusage', function (req, res) {
 router.get('/goldscore', function (req, res) {
     var r = req.query;
     var goldscores = [
-        { name: 'Muhammed Ömer', surname: 'Kısa', identityNumber: '12345', creditCardNumber: '1111222233334444', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com', score: 100 },
-        { name: 'Ahmet Berke', surname: 'Bora', identityNumber: '23456', creditCardNumber: '9999555588880001', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  score: 40 },
-        { name: 'Yusuf Ziya', surname: 'Kısa', identityNumber: '45678', creditCardNumber: '6666888822221111', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  score: 80 },
-        { name: 'Defne', surname: 'Özgülcüler', identityNumber: '56789', creditCardNumber: '3333888855553333', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  score: 90 },
-        { name: 'Deniz', surname: 'Özgülcüler', identityNumber: '67890', creditCardNumber: '6666333399994444', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  score: 45 },
-        { name: 'Ceyda', surname: 'Bora', identityNumber: '34567', creditCardNumber: '2222555500006666', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  score: 5 }
+        { name: 'Muhammed Ömer', surname: 'Kısa', identityNumber: '12345', creditCardNumber: '1111222233334444', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com', goldScore: 100 },
+        { name: 'Ahmet Berke', surname: 'Bora', identityNumber: '23456', creditCardNumber: '9999555588880001', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  goldScore: 40 },
+        { name: 'Yusuf Ziya', surname: 'Kısa', identityNumber: '45678', creditCardNumber: '6666888822221111', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  goldScore: 80 },
+        { name: 'Defne', surname: 'Özgülcüler', identityNumber: '56789', creditCardNumber: '3333888855553333', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  goldScore: 90 },
+        { name: 'Deniz', surname: 'Özgülcüler', identityNumber: '67890', creditCardNumber: '6666333399994444', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  goldScore: 45 },
+        { name: 'Ceyda', surname: 'Bora', identityNumber: '34567', creditCardNumber: '2222555500006666', mobilePhone: '4440123', mobilePhoneAreaCode: '212', email: 'kthackathon@mail.com',  goldScore: 5 }
     ];
 
     goldscores = goldscores.filter(function (p) { return p.identityNumber == r.identityNumber });
