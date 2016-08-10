@@ -79,7 +79,7 @@ router.post('/preauth', function (req, res) {
         returnObject.message = 'Şuanda işleminizi gerçekleştiremiyoruz.';
       }
       else {
-        returnObject.message = r.creditCardNumber +' numaralı kredi kartından ' + r.amount + 'TL tutarında ön otorizasyon başarıyla gerçekleştirilmiştir.'+ r.installmentNumber;
+        returnObject.message = r.creditCardNumber +' numaralı kredi kartından ' + r.amount + 'TL tutarında ön otorizasyon başarıyla gerçekleştirilmiştir.';
         returnObject.success = true;
       }
       res.json(returnObject);
@@ -103,7 +103,7 @@ router.post('/refund', function (req, res) {
 
 router.post('/goldscoreusage', function (req, res) {
     var r = req.body;
-    var returnObject = { success: false, message: '', methodName:'refund'};
+    var returnObject = { success: false, message: ''};
     if(r.creditCardNumber == null ||
       r.cardExpireDateYear == null ||
       r.cardExpireDateMonth == null ||
@@ -118,8 +118,7 @@ router.post('/goldscoreusage', function (req, res) {
       returnObject.message = 'Şuanda işleminizi gerçekleştiremiyoruz.';
     }
     else {
-      returnObject.message = r.creditCardNumber + ' numaralı kredi kartına ait '
-      + r.provisionNumber + ' provizyon numaralı işlem için hesabınıza tanımlı ' + r.goldscore + ' TL değerinde altın puan kullanımı gerçekleştirilmiştir';
+      returnObject.message = r.creditCardNumber + ' numaralı kredi kartına ait "provisionNumber": "67867" provizyon numaralı işlem için hesabınıza tanımlı ' + r.goldscore + ' TL değerinde altın puan kullanımı gerçekleştirilmiştir';
       returnObject.success = true;
     }
   res.json(returnObject);
