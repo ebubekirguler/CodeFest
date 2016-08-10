@@ -1,6 +1,6 @@
 require 'rest-client'
 require 'JSON'
-response  = RestClient.post('http://localhost:3000/auth/',
+response  = RestClient.post('http://ktcodefest.azurewebsites.net/auth/',
 {
       :accountNumber => '123456',
       :password => '123456'
@@ -8,5 +8,5 @@ response  = RestClient.post('http://localhost:3000/auth/',
 
 auth = JSON.parse(response);
 
-response = RestClient.get 'http://localhost:3000/corebanking/fecs/', {:Authorization => auth["result"]["accessToken"]}
+response = RestClient.get 'http://ktcodefest.azurewebsites.net/corebanking/fecs/', {:Authorization => auth["result"]["accessToken"]}
 puts response

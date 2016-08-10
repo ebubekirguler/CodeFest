@@ -12,8 +12,8 @@ namespace SampleClient
 {
     class Program
     {
-        const string AuthServiceURL = @"http://localhost:3000/Auth";
-        const string LoanServiceURL = @"http://localhost:3000/Loan";
+        const string LoanServiceURL = @"http://ktcodefest.azurewebsites.net/Loan";
+        const string AuthServiceURL = @"http://ktcodefest.azurewebsites.net/Auth";
 
         static void Main(string[] args)
         {

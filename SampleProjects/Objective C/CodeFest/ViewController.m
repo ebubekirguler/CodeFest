@@ -44,7 +44,7 @@
     NSString *postLength = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://localhost:3000/auth"]];
+    [request setURL:[NSURL URLWithString:@"http://ktcodefest.azurewebsites.net/auth"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
     [request setHTTPBody:postData];
@@ -76,7 +76,7 @@
 //İşlem yapmak istediğimiz post servis call edilir
 -(void)callPOSTService:(NSString*)accessToken
 {
-    NSString *requestParams = [NSString stringWithFormat:@"creditCardNumber=1234567890123456&cardExpireDateYear=2019&cardExpireDateMonth=12&CVV2=0000&cardHolderName=Mustafa&cardType=Visa&amount=100&merchantId=1&installmentCount=2&currencyCode=1&goldscore=5"];
+    NSString *requestParams = [NSString stringWithFormat:@"creditCardNumber=1234567890123456&cardExpireDateYear=2019&cardExpireDateMonth=12&CVV2=0000&cardHolderName=Mustafa&cardType=Visa&amount=100&merchantId=1&currencyCode=1&goldscore=5"];
     
     /*NSString *requestParams = [NSString stringWithFormat:@"creditCardNumber=1234567890123456&cardExpireDateYear=2019&cardExpireDateMonth=12&CVV2=0000&cardHolderName=Mustafa&cardType=Visa&amount=100&merchantId=1&orderId=2&provisionNumber=1"];*/
     
@@ -86,7 +86,7 @@
     NSString *dataLength = [NSString stringWithFormat:@"%lu", (unsigned long)[dataReq length]];
     
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://localhost:3000/virtualpos/goldscoreusage"]];
+    [request setURL:[NSURL URLWithString:@"http://ktcodefest.azurewebsites.net/virtualpos/goldscoreusage"]];
     [request setHTTPMethod:@"POST"];
     [request setValue:dataLength forHTTPHeaderField:@"Content-Length"];
     [request setValue:accessToken forHTTPHeaderField:@"authorization"];
@@ -110,7 +110,7 @@
 -(void)callGETService:(NSString*)accessToken
 {
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:[NSURL URLWithString:@"http://localhost:3000/virtualpos/goldscore/23456"]];
+    [request setURL:[NSURL URLWithString:@"http://ktcodefest.azurewebsites.net/virtualpos/goldscore/23456"]];
     [request setHTTPMethod:@"GET"];
     [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
     [request addValue:accessToken forHTTPHeaderField:@"authorization"];
@@ -124,10 +124,8 @@
         
         NSDictionary *responseDictionary = [NSJSONSerialization JSONObjectWithData:data options:0 error:NULL];
         NSDictionary *result = [responseDictionary objectForKey:@"result"];
-        NSArray *goldscores = [result objectForKey:@"goldscores"];
-        NSDictionary *scoreDict = [goldscores objectAtIndex:0];
-        NSString *score = [scoreDict objectForKey:@"score"];
-        NSLog(@"responseDictionary.goldscores[0].score : %@", score);
+        NSString *score = [result objectForKey:@"goldScore"];
+        NSLog(@"responseDictionary.result.goldScore : %@", score);
         
     }] resume];
 }

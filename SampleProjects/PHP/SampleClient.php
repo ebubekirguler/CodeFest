@@ -1,6 +1,6 @@
 <?php
 
-$url = 'http://localhost:3000/auth';
+$url = 'http://ktcodefest.azurewebsites.net/auth';
 $data = array(
     'accountNumber' => 1,
     'password' => '123456');
@@ -22,7 +22,7 @@ $result = file_get_contents($url, false, $context);
 $auth = json_decode($result, TRUE);
 $token = $auth['result']['accessToken'];
 
-$url = 'http://localhost:3000/loan';
+$url = 'http://ktcodefest.azurewebsites.net/loan';
 $options = array(
     'http' => array(
         'header'  => "Authorization: {$token}\r\n".
@@ -48,7 +48,7 @@ $data = array(
     'applicationClass' => 'ARACBINEK2EL',
     'amount' => 52400);
 
-$url = 'http://localhost:3000/loan';
+$url = 'http://ktcodefest.azurewebsites.net/loan';
 $options = array(
     'http' => array(
         'header'  => "Authorization: {$token}\r\n".

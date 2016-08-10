@@ -24,7 +24,7 @@ import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
 
-    final static String serviceUrl = "http://10.19.0.162:3000";
+    final static String serviceUrl = "http://ktcodefest.azurewebsites.net";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
