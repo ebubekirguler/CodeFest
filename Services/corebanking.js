@@ -1,79 +1,23 @@
-var express = require('express');
-var router = express.Router();
+const express = require("express");
+const router = express.Router();
 
-// hesap listesi
-router.get('/accounts', function(req, res) {
-  res.json({success: true, result: accountList})
-})
-
-// qr ile para çek
-router.post('/qr', function (req, res) {
-    if(req.body.amount && req.body.ATMCode && atmList.find(x=> x.Code == req.body.ATMCode)) {
-    	res.json({ success: true, message: req.body.amount + ' TL tutarındaki işleminize ' + atmList.find(x=> x.Code == req.body.ATMCode).Name+ ' üzerinden devam edebilirsiniz.'});
-    }
-    else {
-		res.json({ success: false, message: 'Şuanda işleminizi gerçekleştiremiyoruz.'});
-	}
-
-})
-
-// döviz listesi
-router.get('/fecs', function (req, res) {
-    res.json({ success: true, result: fecList});
-})
-
-// kur listesi
-router.get('/fxrates', function (req, res) {
-    res.json({ success: true, result: fxRates});
-})
-
-// kur listesi (tekil)
-router.get('/fxrates/:fecId', function (req, res) {
-    getFXRate(req.params.fecId, function(rate) {
-        res.json({ success: true, result: rate});
-    }, function(err) {
-        res.status(404).json({ success: false, result: null});
-    })
-})
-
-// atm listesi
-router.get('/atms', function (req, res) {
-    res.json({ success: true, result: atmList});
-})
-
-module.exports = router;
-
-
-getFXRate = function(fecId, onSuccess, onError) {
-    var fxRate;
-    fxRates.forEach(function(rate) {
-        if(rate.FecId == fecId)
-            fxRate = rate;
-    });
-    if(fxRate){
-        onSuccess(fxRate);
-    }else {
-        onError("NotFound");
-    }
-};
-
-var accountList = [
+const accountList = [
   {
     accountNumber: 56,
     accountSuffix: 1,
     fec: 0,
     balance: 100,
-    productCode: 'CARIHESAP'
+    productCode: "CARIHESAP"
   },
   {
     accountNumber: 56,
     accountSuffix: 1,
     fec: 0,
     balance: 1000,
-    productCode: 'AYLIKKATILMA'
+    productCode: "AYLIKKATILMA"
   }
 ]
-var fecList = [
+const fecList = [
          {
             "FecId": "0",
             "FecCode": "TL",
@@ -300,7 +244,7 @@ var fecList = [
             "FecName": "Filipinler Pesosu"
          }
          ];
-var atmList =
+const atmList =
     [
          {
             "Code": "KT34A001",
@@ -408,7 +352,7 @@ var atmList =
             "Type": "XTM"
         }
       ]
-var fxRates =  [
+const fxRates =  [
          {
             "FecId": "1",
             "FecCode": "USD",
@@ -655,3 +599,58 @@ var fxRates =  [
             "CurrencyBid": "0.73785"
          }
       ];
+
+// hesap listesi
+router.get("/accounts", (req, res) => {
+  res.json({success: true, result: accountList})
+})
+
+// qr ile para çek
+router.post("/qr", (req, res) => {
+    if(req.body.amount && req.body.ATMCode && atmList.find(x=> x.Code == req.body.ATMCode)) {
+    	res.json({ success: true, message: req.body.amount + " TL tutarındaki işleminize " + atmList.find(x=> x.Code == req.body.ATMCode).Name+ " üzerinden devam edebilirsiniz."});
+    }
+    else {
+      res.json({ success: false, message: "Şuanda işleminizi gerçekleştiremiyoruz."});
+	}
+
+})
+
+// döviz listesi
+router.get("/fecs", (req, res) => {
+    res.json({ success: true, result: fecList});
+})
+
+// kur listesi
+router.get("/fxrates", (req, res) => {
+    res.json({ success: true, result: fxRates});
+})
+
+// kur listesi (tekil)
+router.get("/fxrates/:fecId", (req, res) => {
+    getFXRate(req.params.fecId, function(rate) {
+        res.json({ success: true, result: rate});
+    }, function(err) {
+        res.status(404).json({ success: false, result: null});
+    })
+})
+
+// atm listesi
+router.get("/atms", (req, res) => {
+    res.json({ success: true, result: atmList});
+})
+
+module.exports = router;
+
+getFXRate = (fecId, onSuccess, onError) => {
+    let fxRate;
+    fxRates.forEach(function(rate) {
+        if(rate.FecId == fecId)
+            fxRate = rate;
+    });
+    if(fxRate){
+        onSuccess(fxRate);
+    }else {
+        onError("NotFound");
+    }
+};

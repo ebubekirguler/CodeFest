@@ -1,7 +1,7 @@
-var winston = require('winston');
-var moment = require('moment');
+const winston = require('winston');
+const moment = require('moment');
 
-var logger = new (winston.Logger)({
+const logger = new (winston.Logger)({
     transports: [
         new (winston.transports.File)({
             filename:'logs/' + moment().format('MM-DD-YYYY-HH') + '.log',
@@ -11,12 +11,12 @@ var logger = new (winston.Logger)({
     ]
 });
 
-exports.requestHandler = function (req, res, next) {
-	var info = {};
+exports.requestHandler = (req, res, next) => {
+	let info = {};
 	info.body = req.body;
 	info.params = req.params;
 	info.url = req.url;
 	info.method = req.method;
-    logger.log('info', 'Request Logging', info);
-    next();
+  logger.log('info', 'Request Logging', info);
+  next();
 };
